@@ -1,0 +1,82 @@
+.wondering{
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    margin: 0 auto;
+    background-color: rgb(238, 238, 238);
+    grid-gap: 1.5rem;
+    border-radius: 15px;
+    padding: 3.2rem;
+    margin-top: 4rem;
+        @include responsive(wondering){
+            grid-template-columns: 1fr;
+            grid-template-rows: 400px 1fr;
+        }
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(min-content, max-content));
+        grid-template-rows: repeat(4, minmax(min-content, max-content));
+        grid-column-gap: 0.5rem;
+        grid-row-gap: 1.3rem;
+        &--text-1,
+        &--text-2,
+        &--text-3{
+            font-size: 1.2rem;
+            color: gray;
+        }
+
+        &--title{
+            grid-column: 2;
+            font-size: 2rem;
+            margin-left: -2rem;
+            font-family:  Helvetica;
+            background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+        &--circle-1{
+                @include circle-styles;
+                background-color:#4b2aad;
+                grid-column: 1;
+                grid-row: 2;
+                opacity: 0.5;
+
+            }
+            &--circle-2{
+                @include circle-styles;
+                background-color: #4b2aad;
+                grid-column: 1;
+                grid-row: 3;
+                opacity: 0.5;
+
+            }
+            &--circle-3{
+                @include circle-styles;
+                background-color: #4b2aad;
+                grid-column: 1;
+                grid-row: 4;
+                opacity: 0.5;
+
+            }
+    }
+        &__video{
+            position: relative;
+            padding: 2rem;
+
+               video{
+                width: 100%;
+                position: absolute;
+                height: 100%;
+                
+                object-fit: cover;
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+                border-radius: 15px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+               }
+        }
+}
+

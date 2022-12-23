@@ -1,0 +1,51 @@
+.hamburger__background{
+    background-color: #d4cde9;
+    opacity: 0;
+    display: none;
+    transition: all .6s;
+
+}
+.Cont{
+    opacity: 0;
+    display: none;
+    position: absolute;
+    z-index: 12;
+
+
+       a{
+           display: block;
+           text-decoration: none;
+           color: #4b2aad;
+           font-size: 1.4rem;
+           margin-top: 2rem;
+
+            &:hover{
+                transform: translateY(-6px);
+                transition: all .4s;
+            
+            }
+           &:last-child{
+               background-color: #4b2aad;
+               padding: 1rem 1.2rem;
+               font-size: 1.4rem;
+
+               color: white;
+               border-radius: 50px;
+               background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+           }
+       }
+}
+.hamburger__check:checked + label + .Cont{
+    opacity: 1;
+    display:block;
+}
+
+.hamburger__check:checked + label ~ .hamburger__background{
+    scale: 50;
+    display: block;
+    opacity: 1;
+}
+input{
+    display: none;
+    opacity: 0;
+}

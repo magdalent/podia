@@ -1,0 +1,375 @@
+.main{
+    width: 80vw;
+    font-family:  Helvetica;
+    margin: 0 auto;
+    margin-top: 3rem;
+    position: relative;
+
+}
+
+.grid{
+    display: grid;
+    grid-template-areas:   "plan mover shaker earthquake"
+                            "core blue1 purple1 brown1"
+                            "sell blue2 purple2 brown2"
+                            "market blue3 purple3 brown3"
+                            "email blue4 purple4 brown4"
+                            "extras blue5 purple5 brown5";
+
+    grid-template-columns: 300px repeat(3, 1fr);
+    grid-template-rows: repeat(4, minmax(min-content, max-content));
+    grid-gap: 1.5rem;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+&__title{
+    @include responsive(font-grid){
+        font-size: 3vw;
+    }
+}
+    @include responsive(font-grid){
+        display: grid;
+        grid-gap: .5rem;
+
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: repeat(4,min-content);
+
+
+
+     }
+&__mover{
+    grid-area: mover;
+
+
+}
+&__shaker{
+    grid-area: shaker;
+}
+&__Earthquake{
+    grid-area: earthquake;
+
+}
+&__core--list{
+    grid-area: core;
+   line-height: 3rem;
+   font-size: 1rem;
+   @include responsive(big-grid){
+    font-size: 0.8rem;
+
+   }
+   h1{
+    font-size: 2rem;
+    font-family: Helvetica;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    
+   }
+   
+}
+&__sell--list{
+    grid-area: sell;
+    line-height: 3rem;
+    font-size: 1rem;
+
+    h1{
+        @include grid-title;    
+   }
+}
+&__market--list{
+    grid-area: market;
+    line-height: 3rem;
+    font-size: 1rem;
+
+    h1{
+        
+        @include grid-title;    
+
+   }
+
+}
+&__emailmarket--list{
+    grid-area: email;
+    line-height: 3rem;
+    font-size: 1rem;
+
+
+    h1{
+        @include grid-title;    
+
+    
+   }
+
+
+}
+&__extras--list{
+    grid-area:extras;
+    line-height: 3rem;
+    font-size: 1rem;
+    h1{
+        @include grid-title;    
+
+        
+       }
+
+}
+}
+
+$core-map1:(blue1,purple1,brown1); 
+$core-map2:(blue2,purple2,brown2); 
+$core-map3:(blue3,purple3,brown3); 
+$core-map4:(blue4,purple4,brown4); 
+$core-map5:(blue5,purple5,brown5); 
+$val: 3;
+
+//Place the items on the grid:
+@for $n from 1 through $val{
+    @for $t from 1 through $val{
+        @for $p from 1 through $val{
+            @for $z from 1 through $val{
+                @for $q from 1 through $val{
+
+                .grid__core-circ-#{$n}{
+                    grid-area: nth($core-map1, $n);
+                    @include circle-group-styles;
+                }
+                .grid__market-circ-#{$t}{
+                    grid-area: nth($core-map3, $t);
+                    @include circle-group-styles;
+                }
+                .grid__emailmarket-circ-#{$p}{
+                    grid-area: nth($core-map4, $p);
+                    @include circle-group-styles;
+                }
+                .grid__sell-circ-#{$z}{
+                    grid-area: nth($core-map2, $z);
+                    @include circle-group-styles;
+                }
+                .grid__extras-circ-#{$q}{
+                    grid-area: nth($core-map5, $q);
+                    @include circle-group-styles;
+                }
+            }
+        }
+    }
+}
+}
+
+
+
+$colors: (
+     #91d8ee,
+     #91d8ee,
+     #91d8ee,
+     #91d8ee,
+     #91d8ee, 
+     #91d8ee, 
+     #90B77D,
+     #90B77D,
+     #90B77D,
+     #90B77D,
+     #90B77D,
+     #90B77D,
+
+rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133)
+);
+
+$colors4: (
+#91d8ee,
+ #91d8ee,
+ #91d8ee,
+ #91d8ee,
+ #91d8ee,
+#91d8ee,
+#91d8ee,
+ #91d8ee, 
+   #90B77D,
+   #90B77D,
+   #90B77D,
+  #90B77D,
+   #90B77D,
+   #90B77D,
+   #90B77D,
+   #90B77D,
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133),
+rgb(247, 133, 133)
+
+);
+$colors2: (
+ #91d8ee,#91d8ee,#91d8ee,#91d8ee, #91d8ee
+,#90B77D,#90B77D,#90B77D,#90B77D,#90B77D,
+rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133),rgb(247, 133, 133)
+);
+$colors3: (
+     #91d8ee,
+     #91d8ee,
+     #90B77D,
+     #90B77D,
+     rgb(247, 133, 133),
+rgb(247, 133, 133)
+);
+// chnage the colors of the individual circels
+@for $i from 1 through 18{
+    @for $s from 1 through 25{
+    .circles-#{$i}{
+        background-color: nth($colors, $i);
+        @include  circle-styles;
+    }
+    .circles-extras-#{$s}{
+        background-color: nth($colors4, $s);
+        @include  circle-styles;
+    }
+}
+}
+
+@for $n from 1 through 15{
+    .circles-sell-#{$n}{
+        background-color: nth($colors2, $n);
+        @include circle-styles;
+      
+    }
+}
+@for $m from 1 through 15{
+    .circles-market-#{$m}{
+        background-color: nth($colors2, $m);
+       @include circle-styles;
+    }
+}
+@for $v from 1 through 6{
+    .circles-emailmarket-#{$v}{
+        background-color: nth($colors3, $v);
+       @include circle-styles;
+    }
+}
+.check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+        &::after{
+            content: " ";
+            display: inline-block;
+            transform: rotate(45deg);
+            height: 20px;
+            width:10px;
+            border-bottom: 3px solid #ffffff;
+            border-right: 3px solid rgb(255, 255, 255);
+
+        }
+  }
+
+  
+
+  
+  
+  .center-text{
+      position: relative;
+      p{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+      }
+  }
+  .price-month{
+      width: 4.5rem;
+      border-radius: 10px;
+      padding: 0.5rem;
+      color: white;
+      font-size: 0.8rem;
+      margin: 0 auto;
+      height: 1.2rem;
+
+    
+     p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+     }
+  }
+
+
+    .x{
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        border-radius: 50px;
+  
+      &:after{
+         
+          display: inline-block;
+          content: "\00d7"; 
+        }
+        
+    }
+   
+
+    @for $j from 1 through  3{
+        .grid__prices--price-#{$j}{
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: black;
+
+        }
+    }
+
+
+ .grid__prices--title-1{
+     margin-bottom: 0.5rem;
+     color: #65adc4;
+     @include responsive(font-grid){
+font-size: 4vw;
+    }
+
+ }
+ .grid__prices--info-1{
+    color: gray;
+    @include responsive(font-grid){
+        font-size: 2.5vw;
+            }
+ }
+
+.grid__prices--title-2{
+    margin-bottom: 0.5rem;
+    color: #90B77D;
+    @include responsive(font-grid){
+        font-size: 4vw;
+            }
+ 
+}
+.grid__prices--info-2{
+    color: gray;
+    @include responsive(font-grid){
+        font-size: 2.5vw;
+            }
+ }
+
+
+.grid__prices--title-3{
+    margin-bottom: 0.5rem;
+    color: rgb(247, 133, 133) ;
+    @include responsive(font-grid){
+        font-size: 4vw;
+            }
+ 
+}   
+.grid__prices--info-3{
+    color: gray;
+}
+
+

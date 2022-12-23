@@ -1,0 +1,72 @@
+.faq{
+    width: 100vw;
+    margin: 3rem;
+  
+        &__title{
+            font-size: 2.2rem;
+            font-family:  Helvetica;
+            margin: 2rem;
+            background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+
+        }
+}
+[class^="faq__answer--"]{
+    opacity: 0;
+    display: none;
+}
+[class^="faq__label--"]{
+    font-size: 1.5rem;
+    color: gray;
+    display: block;
+    margin: 2rem;
+
+    @include responsive( semi-small){
+        font-size: 1.1rem;
+
+
+    }
+}
+[class^="faq__checkbox--"]:checked +[class^="faq__label--"] + [class^="faq__answer--"]{
+    opacity: 1;
+    display: block;
+    width: 70%;
+    margin: 2rem;
+    font-size: 1.3rem;
+
+}
+
+[class^="faq__label--"]{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(max-content, min-content));
+    grid-column-gap: 2rem;
+    transition: all 2s;
+        
+        &:hover{
+            color: #4b2aad;
+            }
+        div{
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: #4b2aad;
+            background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+            position: relative;
+                p{
+                    font-size: 0.8rem;
+                    color: #ffffff;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 2rem;
+                }
+                
+        }
+        span{
+            align-self: center;
+            }
+            
+}

@@ -1,0 +1,103 @@
+.header{
+    width: 100vw;
+    @include responsive(navigation1){
+        height: 50vh;
+    }
+
+
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+        grid-row-gap: 1.5rem;
+        &--sub{
+            justify-self: center;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 2000;
+            background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include responsive(navigation1){
+                font-size: 1.2rem;
+            }
+
+        }
+        &--btn{
+            justify-self: center;
+            font-family: 'Inter', sans-serif;
+            background-color: #4b2aad;
+            background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+
+            width: 30%;
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            @include responsive(navigation1){
+                font-size: 1rem;
+                width: 50%;
+
+            }
+            
+
+        }
+        &--title{
+            font-size: 6.7vw;   
+            text-align: center;
+            width: 60%;  
+            margin: 0 auto;  
+            font-family:  Helvetica;
+            animation:  text-animate 5s infinite;
+   
+  
+        }
+    }
+   
+}
+
+@keyframes text-animate{
+    0%{
+        background: -webkit-linear-gradient(10deg, #371c88, #8c7bc7,#b0d6f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    20%{
+        background: -webkit-linear-gradient(50deg, #371c88, #8c7bc7,#b0d6f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    40%{
+        background: -webkit-linear-gradient(100deg, #371c88, #8c7bc7,#b0d6f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    60%{
+        background: -webkit-linear-gradient(200deg, #371c88, #8c7bc7,#b0d6f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    80%{
+        background: -webkit-linear-gradient(33deg, #371c88, #8c7bc7,#b0d6f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    100%{
+        background: -webkit-linear-gradient(3deg, #371c88, #8c7bc7,#b0d6f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+}

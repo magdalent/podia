@@ -1,0 +1,79 @@
+.i{
+    position: absolute;
+    z-index: 10;
+    background-color: #fdfbf9;
+    cursor: pointer;
+    border: 2px solid#4b2aad    ;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+        p{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+    &__content{
+        position: absolute;
+        background-color: #2b2b2b;
+        opacity: 0;
+        border-radius: 15px;
+        color: white;
+        z-index: 1;
+        width: 15rem;
+        left: 1rem;
+       top: 20px;
+        padding: 0.5rem;
+
+    }
+}
+
+
+.i__content-2{
+    position: absolute;
+        background-color: #575757;
+        opacity: 0;
+        border-radius: 15px;
+        color: white;
+        z-index: 1;
+        width: 15rem;
+        left: 1rem;
+       margin-top: 40px;
+        padding: 0.5rem;
+
+}
+
+.i__content-3{
+    position: absolute;
+        background-color: #e4b8b8;
+        opacity: 0;
+        border-radius: 15px;
+        color: white;
+        z-index: 1;
+        width: 15rem;
+        left: 1rem;
+       margin-top: 90px;
+        padding: 0.5rem;
+
+}
+
+.hover-i-1:hover + .i__content{
+    opacity: 1;
+
+}
+.hover-i-2:hover + .i__hover-2{
+    opacity: 1;
+
+}
+
+
+.hover-i-3:hover + .i__hover-3{
+    opacity: 1;
+
+}
+.grid__sell--list{ // its important to st the item to relative or lese postion will be anightmre
+    position: relative;
+}

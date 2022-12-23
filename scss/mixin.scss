@@ -1,0 +1,22 @@
+@mixin circle-styles{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-bottom: 0.6rem;
+    position: relative;
+  //  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+@mixin circle-group-styles{
+    margin: 0 auto;
+    padding-top: 2.5rem;
+}
+
+@mixin grid-title {
+  font-family: Helvetica;
+  font-weight: 700;
+  background: -webkit-linear-gradient(45deg, #371c88, #8c7bc7,#b0d6f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+}
