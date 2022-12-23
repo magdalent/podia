@@ -1,4 +1,5 @@
 # Podia
 A Frontend practice project
-## view live
-https://magdalent.github.io/podia/
+# view live 
+### [view 🔗](https://magdalent.github.io/podia/) 
+
